@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ 
+
   devise_for :users, controllers: {registrations: 'registrations'}
   
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+ 
+  resources :users, only: [:show]
  
  root 'pages#home'
 
